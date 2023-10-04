@@ -1,0 +1,15 @@
+from datetime import datetime
+
+today = datetime.now().strftime('%Y-%m-%d')
+
+with open('today.txt','w') as file:
+    file.write(today)
+
+with open('today.txt','r') as file:
+    today_string = file.readline().strip()
+
+parsed_date = datetime.strptime(today_string, '%Y-%m-%d').date()
+print(parsed_date)
+
+
+
